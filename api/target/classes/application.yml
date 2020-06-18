@@ -1,0 +1,41 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: api
+  #redis配置
+  redis:
+    host: 139.224.68.139
+    port: 6379
+    password:
+    database: 1
+    timeout: 60s
+   ## springboot2.0之后将连接池由jedis改为lettuce
+    lettuce:
+      pool:
+        max-idle: 15
+        max-active: 1
+        max-wait: 10000
+        min-idle: 5
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+#token过期时间：30分钟
+token:
+  expire:
+    time: 1800000
+    # //5 * 60 * 1000
+
+#refreshToken过期时间：12小时
+refresh:
+  token:
+    expire:
+      time: 43200000
+
+jwt:
+  secret:
+    1: OPERATE
+    2: USER
+    3: WX

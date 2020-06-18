@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api" />
+        <module name="Client" />
+        <module name="common" />
+        <module name="datagateway" />
+        <module name="datastorage" />
+        <module name="gateway" />
+        <module name="nacos-provider" />
+        <module name="nacosprovider" />
+        <module name="Server" />
+        <module name="smartwsbackmaster" />
+        <module name="user-provider" />
+        <module name="userprovider" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="authservice" target="1.8" />
+      <module name="gdjt" target="1.8" />
+      <module name="nacos-consumer" target="1.8" />
+      <module name="nacosconsumer" target="1.8" />
+      <module name="smartws" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

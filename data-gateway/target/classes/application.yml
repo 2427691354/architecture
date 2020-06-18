@@ -1,0 +1,16 @@
+#服务器端口号
+server:
+  port: 6666
+
+#传输协议 UDP TCP MQTT
+protocol: UDP
+
+spring:
+  data:
+    mongodb:
+      host: 47.101.141.93
+      port: 27017
+      database: db_workshop
+      authentication-database: admin
+      username: admin
+      password: password

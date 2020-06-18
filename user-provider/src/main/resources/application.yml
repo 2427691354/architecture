@@ -1,0 +1,74 @@
+server:
+  port: 8090
+#token过期时间：30分钟
+token:
+  expire:
+    time: 1800000
+    # //5 * 60 * 1000
+
+#refreshToken过期时间：12小时
+refresh:
+  token:
+    expire:
+      time: 43200000
+
+jwt:
+  secret:
+    1: OPERATE
+    2: USER
+    3: WX
+
+
+
+
+#
+#server:
+#  port: 8090
+#
+#spring:
+#  application:
+#    name: cloud-gateway
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#      - id: nacos-provider
+#        uri: lb://nacos-provider
+#        predicates:
+#          - Path=/nacos/**
+#      - id: user-provider
+#        uri: lb://user-provider
+#        predicates:
+#          - Path=/user/**
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+#  profiles:
+#    active: dev
+#  redis:
+#    host: 139.224.68.139
+#    port: 6379
+#    password:
+#    database: 1
+#    timeout: 60s
+#    jedis:
+#      pool:
+#        max-active: 1
+#        max-idle: 15
+#        min-idle: 5
+#        max-wait: -1s
+#
+#
+#jwt:
+#  secret:
+#    key: asdfghjkl
+#  blacklist:
+#    key:
+#      format: JWT_BLACKLIST::%s
+#
+#auth:
+#  skip:
+#    urls: /nacos/auth,/nacos/token/refresh
+

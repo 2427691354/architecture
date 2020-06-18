@@ -1,0 +1,61 @@
+#
+#server:
+#  port: 8090
+#
+#spring:
+#  application:
+#    name: gateway
+#  cloud:
+#    gateway:
+#      routes:
+#        #netty 路由过滤器，http或https开头 lb://代表是eureka服务的名称  predicates:表示会过滤掉的请求头
+#        - id: gateway-route
+#          uri: lb://api
+#          predicates:
+#            - Path=/api/**,/route-api/**
+#      #处理跨域请求问题
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedMethods: "*"
+#    nacos:
+#      discovery:
+#        server-addr: 127.0.0.1:8848
+##  #redis配置
+##  redis:
+##    host: 139.224.68.139
+##    port: 6379
+##    password:
+##    database: 1
+##    timeout: 60s
+##   ## springboot2.0之后将连接池由jedis改为lettuce
+##    lettuce:
+##      pool:
+##        max-idle: 15
+##        max-active: 1
+##        max-wait: 10000
+##        min-idle: 5
+#
+#
+auth:
+  skip:
+    urls: /route-api/login,/route-api/refresh,/route-api/logout
+#
+#token过期时间：30分钟
+token:
+  expire:
+    time: 1800000
+    # //5 * 60 * 1000
+
+#refreshToken过期时间：12小时
+refresh:
+  token:
+    expire:
+      time: 43200000
+
+jwt:
+  secret:
+    1: OPERATE
+    2: USER
+    3: WX

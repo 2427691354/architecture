@@ -1,0 +1,41 @@
+
+server:
+  port: 8762
+
+spring:
+  redis:
+    host: 139.224.68.139
+    port: 6379
+    password:
+    database: 1
+    timeout: 60s
+    jedis:
+      pool:
+        max-active: 1
+        max-idle: 15
+        min-idle: 5
+        max-wait: -1s
+
+token:
+  expire:
+    time: 60000
+
+refresh:
+ token:
+   expire:
+     time: 120000
+
+jwt:
+  secret:
+    key: asdfghjkl
+  refresh:
+    token:
+      key:
+        format: JWT_REFRESH_TOKEN::%s
+  blacklist:
+    key:
+      format: JWT_BLACKLIST::%s
+
+auth:
+  skip:
+    urls: /nacos/auth,/nacos/token/refresh
